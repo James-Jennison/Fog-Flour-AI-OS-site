@@ -98,7 +98,8 @@ remain unchanged throughout this local milestone.
 ## Remaining approval gates
 
 - Push the implementation commit
-- Create the Webuzo domain and document root
+- Webuzo domain and document root — completed in
+  [Milestone 20C](MILESTONE_20C_WEBUZO_DOMAIN.md)
 - Create Cloudflare DNS
 - Enroll Webuzo Automatic SSL
 - Deploy to staging or production

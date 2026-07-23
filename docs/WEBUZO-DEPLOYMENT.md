@@ -1,20 +1,26 @@
 # Webuzo deployment
 
-Status: **Prepared locally; domain creation and deployment are not authorized by this document**
+Status: **Webuzo domain created with an empty origin-only document root; artifact deployment is not authorized by this document**
 
 ## Production contract
 
 - Canonical hostname: `https://fog-flour.jamesjennison.net`
 - Source repository: `James-Jennison/Fog-Flour-AI-OS-site`
 - Webuzo user: `jamesjen`
-- Proposed document root: `/home/jamesjen/fog-flour.jamesjennison.net`
+- Confirmed document root: `/home/jamesjen/fog-flour.jamesjennison.net`
 - Output type: static files from `dist/`
 - Runtime, process manager, reverse proxy, scheduled task, and database: none
 - Edge: Cloudflare proxied DNS with Full (Strict) TLS
 - Origin certificate: Webuzo Automatic SSL
 
-Webuzo must remain authoritative for the exact document root. The proposed path
-must be confirmed after Webuzo creates the domain and before any upload.
+Webuzo is authoritative for the exact document root. Milestone 20C confirmed
+the domain mapping, `jamesjen:nobody` ownership, `0750` root mode, empty
+contents, generated VirtualHosts, and valid Apache syntax. Public DNS remains
+absent.
+
+Webuzo generated a self-signed placeholder during domain creation even though
+certificate issuance was disabled. It is not production trust coverage.
+Automatic SSL enrollment remains a separate approval gate.
 
 ## Build contract
 
@@ -31,7 +37,7 @@ directories, logs, and source maps must never enter the document root.
 
 Every deployment requires separate owner approval and must:
 
-1. resolve the exact Webuzo-managed domain, user, and document root;
+1. revalidate the exact Webuzo-managed domain, user, and document root;
 2. confirm Automatic SSL and Cloudflare Full (Strict) readiness;
 3. capture and restore-test the current Webuzo and document-root state;
 4. rebuild and validate the exact approved source commit;

@@ -62,3 +62,5 @@ GitHub Pages transition are documented in
 
 Milestone evidence is recorded in
 [`docs/MILESTONE_20B_WEBUZO_READY_SITE.md`](docs/MILESTONE_20B_WEBUZO_READY_SITE.md).
+The isolated Webuzo domain and empty origin document root are recorded in
+[`docs/MILESTONE_20C_WEBUZO_DOMAIN.md`](docs/MILESTONE_20C_WEBUZO_DOMAIN.md).
