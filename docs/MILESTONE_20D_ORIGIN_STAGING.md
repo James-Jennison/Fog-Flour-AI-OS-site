@@ -1,6 +1,6 @@
 # Milestone 20D — Webuzo origin-only staging
 
-Status: **Complete; reviewed artifact deployed at the origin with no public DNS**
+Status: **Complete; superseded by the production activation recorded in Milestone 20E**
 
 Date: July 23, 2026
 
@@ -121,8 +121,9 @@ directory was abandoned.
 - The master apex, canonical `www` redirect, Player, QuireForge, webmail,
   autoconfiguration, and autodiscovery retain their expected responses.
 
-The Webuzo-generated self-signed certificate remains staging-only. Trusted TLS
-and Cloudflare Full (Strict) are not yet available for this hostname.
+The Webuzo-generated self-signed certificate was staging-only. Milestone 20E
+replaced it with dedicated Webuzo Automatic SSL coverage and activated the
+approved proxied Cloudflare record.
 
 Chromium correctly refused a direct-origin Lighthouse run because the
 placeholder is self-signed and has no Subject Alternative Name. The audit was
@@ -153,10 +154,9 @@ Content rollback is immediately available without deleting the Webuzo domain:
 Snapshot `5c22fb2e` is the secondary pre-deployment recovery point. Estimated
 rollback execution time is under five minutes after approval.
 
-## Remaining approval gates
+## Subsequent milestone
 
-- Enroll and validate Webuzo Automatic SSL
-- Create the exact Cloudflare DNS record
-- Activate and validate public production traffic
-- Update the master website from planned to live
-- Publish the GitHub Pages transition and later disable Pages
+Milestone 20E completed Automatic SSL enrollment, the exact Cloudflare DNS
+record, and public production validation. The remaining gates are the
+master-site live-state update, the GitHub Pages transition, and the separately
+identified Cloudflare managed-robots SEO decision.
