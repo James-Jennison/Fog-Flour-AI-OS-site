@@ -1,6 +1,6 @@
 # Webuzo deployment
 
-Status: **Webuzo domain created with an empty origin-only document root; artifact deployment is not authorized by this document**
+Status: **Reviewed artifact deployed for origin-only staging; public DNS and trusted TLS are not active**
 
 ## Production contract
 
@@ -12,6 +12,20 @@ Status: **Webuzo domain created with an empty origin-only document root; artifac
 - Runtime, process manager, reverse proxy, scheduled task, and database: none
 - Edge: Cloudflare proxied DNS with Full (Strict) TLS
 - Origin certificate: Webuzo Automatic SSL
+
+## Verified origin-staging state
+
+- Webuzo owns the exact hostname and document root.
+- The reviewed 14-file static artifact is deployed from commit `35ca85f`.
+- Portable manifest:
+  `509b09d1eaa87a072550e758c8332f692b9adc74e455a3f117aff2a3794d875f`.
+- The empty prior root is retained at
+  `/home/jamesjen/.fog-flour-previous-m20d-20260723T130551Z`.
+- Pre-deployment snapshot: `5c22fb2e`.
+- Post-deployment snapshot: `9f1cab04`.
+- Public DNS remains absent.
+- The Webuzo-generated self-signed placeholder remains unsuitable for
+  production trust.
 
 Webuzo is authoritative for the exact document root. Milestone 20C confirmed
 the domain mapping, `jamesjen:nobody` ownership, `0750` root mode, empty
@@ -48,6 +62,10 @@ Every deployment requires separate owner approval and must:
 9. verify origin and edge routes, TLS, redirects, headers, metadata, the custom
    404, master/status navigation, and unaffected sites; and
 10. capture and restore-test the production state.
+
+Milestone 20D completed these steps for origin-only staging and records two
+successful automatic rollback exercises before final promotion. Neither
+exercise affected public traffic because the hostname has no public DNS.
 
 No generated virtual host, global server configuration, shared service, mail
 service, or unrelated domain may be changed.

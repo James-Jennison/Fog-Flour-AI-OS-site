@@ -140,7 +140,8 @@ Estimated rollback execution time is under 15 minutes after approval.
 
 ## Remaining approval gates
 
-- Deploy the reviewed static artifact for origin-only staging
+- Deploy the reviewed static artifact for origin-only staging — completed in
+  [Milestone 20D](MILESTONE_20D_ORIGIN_STAGING.md)
 - Enroll and validate Webuzo Automatic SSL
 - Create the exact Cloudflare DNS record
 - Activate public production traffic
