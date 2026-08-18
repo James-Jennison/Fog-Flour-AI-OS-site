@@ -4,12 +4,12 @@ This repository publishes the intentionally public project overview for Fog &
 Flour: a local-first bakery operating system, Android companion, and narrative
 cookbook platform.
 
-- Planned canonical site: <https://fog-flour.jamesjennison.net/>
-- Temporary GitHub Pages preview:
+- Live canonical site: <https://fog-flour.jamesjennison.net/>
+- Legacy GitHub Pages preview pending its separately approved transition:
   <https://james-jennison.github.io/Fog-Flour-AI-OS-site/>
 
-The canonical site is not considered live until its separately approved
-Webuzo, DNS, TLS, and production validation milestones are complete.
+The canonical site is live through Webuzo, dedicated Automatic SSL, and
+Cloudflare. It has no application runtime, background process, or database.
 
 ## Privacy boundary
 
@@ -62,3 +62,10 @@ GitHub Pages transition are documented in
 
 Milestone evidence is recorded in
 [`docs/MILESTONE_20B_WEBUZO_READY_SITE.md`](docs/MILESTONE_20B_WEBUZO_READY_SITE.md).
+The isolated Webuzo domain and empty origin document root are recorded in
+[`docs/MILESTONE_20C_WEBUZO_DOMAIN.md`](docs/MILESTONE_20C_WEBUZO_DOMAIN.md).
+The reviewed origin-only deployment is recorded in
+[`docs/MILESTONE_20D_ORIGIN_STAGING.md`](docs/MILESTONE_20D_ORIGIN_STAGING.md).
+The production DNS, Automatic SSL, validation, and rollback evidence is
+recorded in
+[`docs/MILESTONE_20E_PRODUCTION_ACTIVATION.md`](docs/MILESTONE_20E_PRODUCTION_ACTIVATION.md).
